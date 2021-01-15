@@ -1,0 +1,89 @@
+@mixin head-1 {
+    font: {
+        size:30px;
+        weight:300;
+        family:'Playfair Display',sans-serif;
+    }
+    line-height: 1.4;
+    
+}
+@mixin head-2 {
+    font: {
+        size:20px;
+        family:$f-family;
+    }
+    color: $color-4;
+}
+
+@mixin p-1 {
+    font: {
+        size:15px;
+        weight:400;
+        family:'Lato',sans-serif;
+    }
+    line-height: 1.6;
+    color: $color-5;
+}
+@mixin p-2 {
+    color: $color-6;
+    font: {
+        family:$f-family;
+        size:15px;
+    }
+    margin: 15px 15px 15px 0px;
+    line-height: 1.8;
+    padding: 0px 0px 10px 0px;
+}
+@mixin buttb {
+    background-color: $color-4;
+    padding: 10px 20px;
+    color: $color-3;
+    font-family:$f-family
+}
+@mixin buttw {
+    background-color: transparent;
+    color: $color-3;
+    border: 2px solid $color-3;
+    font: {
+        family: $f-family;
+        size:20px
+    } 
+    padding: 8px 10px;
+    margin-bottom: 1em;
+    
+
+}
+@mixin content {
+    @extend .image;
+    background-color: $color-2;
+}
+
+@mixin block {
+    display: flex;
+    text-align: left;
+		.cont {
+            @include content;
+            padding:100px 0px 0px 30px;
+            
+            button {
+                @include buttw;               
+            }
+            h2 {
+                @include head-2;
+            }
+            p {
+                @include p-2;
+            }
+            a {
+                @include buttb;
+            }
+		}
+		.image {
+			width:300px;
+			height: 450px;
+					
+			img {
+				@extend .image;
+				}
+		}
+}
